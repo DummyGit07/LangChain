@@ -22,6 +22,9 @@ llm = ChatOllama(model='llama3.2')
 
 # chainning
 first_chain = title_prompt | llm | StrOutputParser()
+
+# extract title
+# first_chain = title_prompt | llm | StrOutputParser() | (lambda title: (st.write(title), title)[1])
 second_chain = speech_prompt | llm
 
 final_chain = first_chain | second_chain
@@ -31,4 +34,5 @@ topic = st.text_input("Enter Topic: ")
 
 if topic:
     response = final_chain.invoke({"topic":topic})
+
     st.write(response.content)
