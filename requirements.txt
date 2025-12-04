@@ -1,6 +1,12 @@
 langchain
 langchain-community
 streamlit
+
+# for using local model
 langchain-ollama
+# langchiain-openai
 numpy
+
+# database
 langchain-chroma
+# faiss-gpu or faiss-cpu
