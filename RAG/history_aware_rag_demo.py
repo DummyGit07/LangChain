@@ -27,7 +27,7 @@ prompt_template = ChatPromptTemplate.from_messages(
 ]
 )
 
-document = TextLoader("RAG/product-data.txt").load()
+document = TextLoader("./product-data.txt").load()
 text_splitter = RecursiveCharacterTextSplitter(chunk_size = 1000, chunk_overlap = 200)
 chunks = text_splitter.split_documents(document)
 
@@ -49,4 +49,5 @@ chain_with_history = RunnableWithMessageHistory(
 question = st.text_input("Enter Question: ")
 if question:
     response = chain_with_history.invoke({"input": question}, {'configurable':{'session_id':"abc123"}})
+
     st.write(response['answer'])
