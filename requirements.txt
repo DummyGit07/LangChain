@@ -10,3 +10,11 @@ numpy
 # database
 langchain-chroma
 # faiss-gpu or faiss-cpu
+
+#Retrival Chains
+langchain_classic
+
+# AWS
+awscli
+boto3
+langchain-aws 
